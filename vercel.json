@@ -5,7 +5,8 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "cd ysce && npm run build",
+  "buildCommand": "cd ysce && npm install && npm run build",
   "outputDirectory": "ysce/dist",
-  "framework": "vite"
+  "framework": "vite",
+  "installCommand": "cd ysce && npm install"
 } 
