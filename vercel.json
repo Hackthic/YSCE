@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "buildCommand": "cd ysce && npm run build",
+  "outputDirectory": "ysce/dist",
+  "framework": "vite"
+} 
