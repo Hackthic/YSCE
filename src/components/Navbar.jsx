@@ -199,6 +199,8 @@ const NavItem = ({ title, onClick }) => (
 
 // Desktop dropdown component
 const Dropdown = ({ title, items, isOpen, toggleDropdown, onItemClick }) => {
+  const isContactMenu = title === "Contact Us";
+  
   return (
     <div className="relative">
       <div 
@@ -214,7 +216,9 @@ const Dropdown = ({ title, items, isOpen, toggleDropdown, onItemClick }) => {
       
       {isOpen && (
         <div 
-          className="absolute top-12 left-0 bg-gray-800 text-white rounded-lg shadow-xl w-64 p-2 space-y-1 z-50"
+          className={`absolute top-12 bg-gray-800 text-white rounded-lg shadow-xl w-64 p-2 space-y-1 z-50 ${
+            isContactMenu ? 'right-0' : 'left-0'
+          }`}
         >
           {items.map((item, index) => (
             <div 
@@ -246,11 +250,11 @@ const MobileDropdown = ({ title, items, isOpen, toggleDropdown, onItemClick }) =
         }}
       >
         <span>{title}</span>
-        <span className="text-[10px]">{isOpen ? "▲" : "▼"}</span>
+        <span className={`text-[10px] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
       </div>
       
       {isOpen && (
-        <div className="bg-gray-700 rounded-md mt-1">
+        <div className="bg-gray-700 rounded-md mt-1 overflow-hidden">
           {items.map((item, index) => (
             <div 
               key={index}

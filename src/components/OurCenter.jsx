@@ -120,28 +120,12 @@ const OurCenter = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative cursor-pointer group"
-                onClick={() => setIsInquiryOpen(true)}
               >
-                <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
-                  <motion.img
-                    src={center.image}
-                    alt={center.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <motion.span
-                      initial={{ y: 20 }}
-                      whileHover={{ y: 0 }}
-                      className="text-white text-2xl font-bold text-center px-6 py-3 bg-black/50 rounded-lg backdrop-blur-sm"
-                    >
-                      {center.name}
-                    </motion.span>
-                  </div>
-                </div>
+                <CenterImage
+                  image={center.image}
+                  name={center.name}
+                  onClick={() => setIsInquiryOpen(true)}
+                />
               </motion.div>
             ))}
           </div>
