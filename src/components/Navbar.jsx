@@ -250,11 +250,11 @@ const MobileDropdown = ({ title, items, isOpen, toggleDropdown, onItemClick }) =
       </div>
       
       {isOpen && (
-        <div className="bg-gray-700 rounded-lg mt-2 p-2 space-y-1">
+        <div className="bg-gray-700 rounded-md mt-1">
           {items.map((item, index) => (
             <div 
-              key={index} 
-              className="px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 cursor-pointer rounded-md transition-colors duration-200 text-sm"
+              key={index}
+              className="px-4 py-2 text-white hover:bg-yellow-400 hover:text-gray-900 cursor-pointer text-sm transition-colors duration-200"
               onClick={(e) => {
                 e.stopPropagation();
                 onItemClick(item);
