@@ -137,7 +137,7 @@ const OurCenter = () => {
         onClose={() => setIsInquiryOpen(false)} 
       />
 
-      <Footer />
+     
     </div>
   );
 };
